@@ -70,6 +70,9 @@ public class TwoPoints
 	 */
 	public double distance()
 	{
+		// BUG: distance() needs to return the distance between the two points, ROUNDED TO THE NEAREST
+		//      INTEGER
+
 		double result = 0.0;
 		int xDiff = points[0].x - points[1].x;
 		int yDiff = points[0].y - points[1].y;
@@ -90,8 +93,12 @@ public class TwoPoints
 			return result;
 		}
 
+		// BUG: int xDiff, yDiff => double xDiff, yDiff
+
 		int xDiff = points[0].x - points[1].x;
 		int yDiff = points[0].y - points[1].y;
+
+		// BUG: xDiff / yDiff => yDiff / xDiff
 
 		result = xDiff / yDiff;
 		return result;
