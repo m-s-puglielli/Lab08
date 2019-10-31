@@ -204,10 +204,10 @@ public class TwoPointsTest
 		assertEquals(p1.y, 5);
 
 		// call the distance() method
-		double distance = test_points.distance();
+		int distance = test_points.distance();
 
 		// test that the distance() method correctly calculated the distance between p0 & p1
-		assertEquals(34, distance, 0);
+		assertEquals(34, distance);
 	}
 
 	@Test

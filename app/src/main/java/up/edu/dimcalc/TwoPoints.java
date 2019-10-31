@@ -68,16 +68,14 @@ public class TwoPoints
 	/**
 	 * calculates the distance between the two points rounded to the nearest integer
 	 */
-	public double distance()
+	public int distance()
 	{
-		// BUG: distance() needs to return the distance between the two points, ROUNDED TO THE NEAREST
-		//      INTEGER
-
 		double result = 0.0;
 		int xDiff = points[0].x - points[1].x;
 		int yDiff = points[0].y - points[1].y;
 		result = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
-		return result;
+		result = Math.round(result);
+		return (int) result;
 	}
 
 	/**
@@ -93,14 +91,10 @@ public class TwoPoints
 			return result;
 		}
 
-		// BUG: int xDiff, yDiff => double xDiff, yDiff
+		double xDiff = points[0].x - points[1].x;
+		double yDiff = points[0].y - points[1].y;
 
-		int xDiff = points[0].x - points[1].x;
-		int yDiff = points[0].y - points[1].y;
-
-		// BUG: xDiff / yDiff => yDiff / xDiff
-
-		result = xDiff / yDiff;
+		result = yDiff / xDiff;
 		return result;
 	}
 
